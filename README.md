@@ -1,5 +1,5 @@
-# Traffic DT - Vehicle Simulator
-Simulates the traffic and sends vehicle data to the integration module.
+# Car Simulator
+Simulates the traffic of 2 cars and sends vehicle data to the integration module.
 
 # Configuration
 Copy the `.env.example` to `.env` file and adjust the variables values if needed.
