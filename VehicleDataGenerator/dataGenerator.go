@@ -37,24 +37,15 @@ func generateData() ([]interface{}, error) {
 	var previousJsonCar1 UpdateJson
 	var previousJsonCar2 UpdateJson
 	var updateJson UpdateJson
-<<<<<<< HEAD
-	for i := 0; i < 10; i++ {
-=======
 
 	// Going in a straight line to North
 	for i := 0; i < 40; i++ {
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 		if previousJsonCar1 == (UpdateJson{}) {
 
 			// Car1
 			locationJson := GpsLocation{
-<<<<<<< HEAD
-				Latitude:  48.154024,
-				Longitude: 17.071208,
-=======
 				Latitude:  48.154054,
 				Longitude: 17.071268,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson := Vehicle{
 				Vin:                     "car1",
@@ -79,11 +70,7 @@ func generateData() ([]interface{}, error) {
 			// Car 2
 			locationJson = GpsLocation{
 				Latitude:  48.154014,
-<<<<<<< HEAD
-				Longitude: 17.071208,
-=======
 				Longitude: 17.071268,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson = Vehicle{
 				Vin:                     "car2",
@@ -111,13 +98,8 @@ func generateData() ([]interface{}, error) {
 
 			// Car1
 			locationJson := GpsLocation{
-<<<<<<< HEAD
-				Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + speedIncrement*0.00001,
-				Longitude: 17.071208,
-=======
 				Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + previousJsonCar1.Vehicle.GpsSpeed*0.0000005,
 				Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson := Vehicle{
 				Vin:                     "car1",
@@ -131,11 +113,7 @@ func generateData() ([]interface{}, error) {
 				MagnetometerDirection:   0.01,
 			}
 			updateJson = UpdateJson{
-<<<<<<< HEAD
-				Index:     1 + i,
-=======
 				Index:     previousJsonCar1.Index + 1,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 				Type:      "update_vehicle",
 				Timestamp: getTimestamp(timeBetweenEvents),
 				Vehicle:   vehicleJson,
@@ -145,13 +123,8 @@ func generateData() ([]interface{}, error) {
 
 			// Car 2
 			locationJson = GpsLocation{
-<<<<<<< HEAD
-				Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + speedIncrement*0.00001,
-				Longitude: 17.071208,
-=======
 				Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + previousJsonCar2.Vehicle.GpsSpeed*0.0000005,
 				Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson = Vehicle{
 				Vin:                     "car2",
@@ -165,11 +138,7 @@ func generateData() ([]interface{}, error) {
 				MagnetometerDirection:   0.01,
 			}
 			updateJson = UpdateJson{
-<<<<<<< HEAD
-				Index:     1 + i,
-=======
 				Index:     previousJsonCar2.Index + 1,
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 				Type:      "update_vehicle",
 				Timestamp: getTimestamp(timeBetweenEvents),
 				Vehicle:   vehicleJson,
@@ -179,8 +148,6 @@ func generateData() ([]interface{}, error) {
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	previousJsonCar1.Vehicle.MagnetometerDirection = 360
 	previousJsonCar1.Vehicle.GpsDirection = 360
 	previousJsonCar2.Vehicle.MagnetometerDirection = 360
@@ -463,6 +430,5 @@ func generateData() ([]interface{}, error) {
 		data = append(data, updateJson)
 	}
 
->>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 	return data, nil
 }
