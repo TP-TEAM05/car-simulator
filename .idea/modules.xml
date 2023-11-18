@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/traffic-dt-vehicle-simulator.iml" filepath="$PROJECT_DIR$/.idea/traffic-dt-vehicle-simulator.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/car-simulator.iml" filepath="$PROJECT_DIR$/.idea/car-simulator.iml" />
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
     </modules>
   </component>
 </project>

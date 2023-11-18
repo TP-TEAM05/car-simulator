@@ -37,13 +37,24 @@ func generateData() ([]interface{}, error) {
 	var previousJsonCar1 UpdateJson
 	var previousJsonCar2 UpdateJson
 	var updateJson UpdateJson
+<<<<<<< HEAD
 	for i := 0; i < 10; i++ {
+=======
+
+	// Going in a straight line to North
+	for i := 0; i < 40; i++ {
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 		if previousJsonCar1 == (UpdateJson{}) {
 
 			// Car1
 			locationJson := GpsLocation{
+<<<<<<< HEAD
 				Latitude:  48.154024,
 				Longitude: 17.071208,
+=======
+				Latitude:  48.154054,
+				Longitude: 17.071268,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson := Vehicle{
 				Vin:                     "car1",
@@ -68,7 +79,11 @@ func generateData() ([]interface{}, error) {
 			// Car 2
 			locationJson = GpsLocation{
 				Latitude:  48.154014,
+<<<<<<< HEAD
 				Longitude: 17.071208,
+=======
+				Longitude: 17.071268,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson = Vehicle{
 				Vin:                     "car2",
@@ -96,8 +111,13 @@ func generateData() ([]interface{}, error) {
 
 			// Car1
 			locationJson := GpsLocation{
+<<<<<<< HEAD
 				Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + speedIncrement*0.00001,
 				Longitude: 17.071208,
+=======
+				Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + previousJsonCar1.Vehicle.GpsSpeed*0.0000005,
+				Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson := Vehicle{
 				Vin:                     "car1",
@@ -111,7 +131,11 @@ func generateData() ([]interface{}, error) {
 				MagnetometerDirection:   0.01,
 			}
 			updateJson = UpdateJson{
+<<<<<<< HEAD
 				Index:     1 + i,
+=======
+				Index:     previousJsonCar1.Index + 1,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 				Type:      "update_vehicle",
 				Timestamp: getTimestamp(timeBetweenEvents),
 				Vehicle:   vehicleJson,
@@ -121,8 +145,13 @@ func generateData() ([]interface{}, error) {
 
 			// Car 2
 			locationJson = GpsLocation{
+<<<<<<< HEAD
 				Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + speedIncrement*0.00001,
 				Longitude: 17.071208,
+=======
+				Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + previousJsonCar2.Vehicle.GpsSpeed*0.0000005,
+				Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 			}
 			vehicleJson = Vehicle{
 				Vin:                     "car2",
@@ -136,7 +165,11 @@ func generateData() ([]interface{}, error) {
 				MagnetometerDirection:   0.01,
 			}
 			updateJson = UpdateJson{
+<<<<<<< HEAD
 				Index:     1 + i,
+=======
+				Index:     previousJsonCar2.Index + 1,
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 				Type:      "update_vehicle",
 				Timestamp: getTimestamp(timeBetweenEvents),
 				Vehicle:   vehicleJson,
@@ -146,5 +179,290 @@ func generateData() ([]interface{}, error) {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	previousJsonCar1.Vehicle.MagnetometerDirection = 360
+	previousJsonCar1.Vehicle.GpsDirection = 360
+	previousJsonCar2.Vehicle.MagnetometerDirection = 360
+	previousJsonCar2.Vehicle.GpsDirection = 360
+
+	// Turning 90 degrees to the West
+	for i := 0; i < 9; i++ {
+		distanceIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+
+		// Car1
+		locationJson := GpsLocation{
+			Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + 0.000001,
+			Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude - 0.000001,
+		}
+		vehicleJson := Vehicle{
+			Vin:                     "car1",
+			FrontLidarDistance:      100.1,
+			FrontUltrasonicDistance: 100.12,
+			RearUltrasonicDistance:  previousJsonCar1.Vehicle.RearUltrasonicDistance + distanceIncrement,
+			WheelSpeed:              previousJsonCar1.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar1.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar1.Vehicle.GpsDirection - 2.5,
+			MagnetometerDirection:   previousJsonCar1.Vehicle.MagnetometerDirection - 2.5,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar1.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar1 = updateJson
+		data = append(data, updateJson)
+
+		// Car 2
+		locationJson = GpsLocation{
+			Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + 0.000001,
+			Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude - 0.000001,
+		}
+		vehicleJson = Vehicle{
+			Vin:                     "car2",
+			FrontLidarDistance:      previousJsonCar2.Vehicle.FrontLidarDistance + distanceIncrement,
+			FrontUltrasonicDistance: previousJsonCar2.Vehicle.FrontUltrasonicDistance + distanceIncrement,
+			RearUltrasonicDistance:  100.11,
+			WheelSpeed:              previousJsonCar2.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar2.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar2.Vehicle.GpsDirection - 10,
+			MagnetometerDirection:   previousJsonCar2.Vehicle.MagnetometerDirection - 10,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar2.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar2 = updateJson
+		data = append(data, updateJson)
+	}
+
+	// Turning 90 degrees to the South
+	for i := 0; i < 9; i++ {
+		distanceIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+
+		// Car1
+		locationJson := GpsLocation{
+			Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude - 0.000001,
+			Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude - 0.000001,
+		}
+		vehicleJson := Vehicle{
+			Vin:                     "car1",
+			FrontLidarDistance:      100.1,
+			FrontUltrasonicDistance: 100.12,
+			RearUltrasonicDistance:  previousJsonCar1.Vehicle.RearUltrasonicDistance + distanceIncrement,
+			WheelSpeed:              previousJsonCar1.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar1.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar1.Vehicle.GpsDirection - 10,
+			MagnetometerDirection:   previousJsonCar1.Vehicle.MagnetometerDirection - 10,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar1.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar1 = updateJson
+		data = append(data, updateJson)
+
+		// Car 2
+		locationJson = GpsLocation{
+			Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude - 0.000001,
+			Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude - 0.000001,
+		}
+		vehicleJson = Vehicle{
+			Vin:                     "car2",
+			FrontLidarDistance:      previousJsonCar2.Vehicle.FrontLidarDistance + distanceIncrement,
+			FrontUltrasonicDistance: previousJsonCar2.Vehicle.FrontUltrasonicDistance + distanceIncrement,
+			RearUltrasonicDistance:  100.11,
+			WheelSpeed:              previousJsonCar2.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar2.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar2.Vehicle.GpsDirection - 2.5,
+			MagnetometerDirection:   previousJsonCar2.Vehicle.MagnetometerDirection - 2.5,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar2.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar2 = updateJson
+		data = append(data, updateJson)
+	}
+
+	// Going in a straight line to South
+	for i := 0; i < 40; i++ {
+
+		speedIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+		distanceIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+
+		// Car1
+		locationJson := GpsLocation{
+			Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude - previousJsonCar1.Vehicle.GpsSpeed*0.00000025,
+			Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude,
+		}
+		vehicleJson := Vehicle{
+			Vin:                     "car1",
+			FrontLidarDistance:      100.1,
+			FrontUltrasonicDistance: 100.12,
+			RearUltrasonicDistance:  previousJsonCar1.Vehicle.RearUltrasonicDistance + distanceIncrement,
+			WheelSpeed:              previousJsonCar1.Vehicle.WheelSpeed + speedIncrement,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar1.Vehicle.GpsSpeed + speedIncrement,
+			GpsDirection:            0,
+			MagnetometerDirection:   0.01,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar1.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar1 = updateJson
+		data = append(data, updateJson)
+
+		// Car 2
+		locationJson = GpsLocation{
+			Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude - previousJsonCar2.Vehicle.GpsSpeed*0.00000025,
+			Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude,
+		}
+		vehicleJson = Vehicle{
+			Vin:                     "car2",
+			FrontLidarDistance:      previousJsonCar2.Vehicle.FrontLidarDistance + distanceIncrement,
+			FrontUltrasonicDistance: previousJsonCar2.Vehicle.FrontUltrasonicDistance + distanceIncrement,
+			RearUltrasonicDistance:  100.11,
+			WheelSpeed:              previousJsonCar2.Vehicle.WheelSpeed + speedIncrement,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar2.Vehicle.GpsSpeed + speedIncrement,
+			GpsDirection:            0,
+			MagnetometerDirection:   0.01,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar2.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar2 = updateJson
+		data = append(data, updateJson)
+	}
+
+	// Turning 90 degrees to the East
+	for i := 0; i < 9; i++ {
+		distanceIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+
+		// Car1
+		locationJson := GpsLocation{
+			Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude - 0.000001,
+			Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude + 0.000001,
+		}
+		vehicleJson := Vehicle{
+			Vin:                     "car1",
+			FrontLidarDistance:      100.1,
+			FrontUltrasonicDistance: 100.12,
+			RearUltrasonicDistance:  previousJsonCar1.Vehicle.RearUltrasonicDistance + distanceIncrement,
+			WheelSpeed:              previousJsonCar1.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar1.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar1.Vehicle.GpsDirection - 10,
+			MagnetometerDirection:   previousJsonCar1.Vehicle.MagnetometerDirection - 10,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar1.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar1 = updateJson
+		data = append(data, updateJson)
+
+		// Car 2
+		locationJson = GpsLocation{
+			Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude - 0.000001,
+			Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude + 0.000001,
+		}
+		vehicleJson = Vehicle{
+			Vin:                     "car2",
+			FrontLidarDistance:      previousJsonCar2.Vehicle.FrontLidarDistance + distanceIncrement,
+			FrontUltrasonicDistance: previousJsonCar2.Vehicle.FrontUltrasonicDistance + distanceIncrement,
+			RearUltrasonicDistance:  100.11,
+			WheelSpeed:              previousJsonCar2.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar2.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar2.Vehicle.GpsDirection - 2.5,
+			MagnetometerDirection:   previousJsonCar2.Vehicle.MagnetometerDirection - 2.5,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar2.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar2 = updateJson
+		data = append(data, updateJson)
+	}
+
+	// Turning 90 degrees to the North
+	for i := 0; i < 9; i++ {
+		distanceIncrement := -0.1 + rand.Float64()*(0.1+0.1)
+
+		// Car1
+		locationJson := GpsLocation{
+			Latitude:  previousJsonCar1.Vehicle.GpsLocation.Latitude + 0.000001,
+			Longitude: previousJsonCar1.Vehicle.GpsLocation.Longitude + 0.000001,
+		}
+		vehicleJson := Vehicle{
+			Vin:                     "car1",
+			FrontLidarDistance:      100.1,
+			FrontUltrasonicDistance: 100.12,
+			RearUltrasonicDistance:  previousJsonCar1.Vehicle.RearUltrasonicDistance + distanceIncrement,
+			WheelSpeed:              previousJsonCar1.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar1.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar1.Vehicle.GpsDirection - 10,
+			MagnetometerDirection:   previousJsonCar1.Vehicle.MagnetometerDirection - 10,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar1.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar1 = updateJson
+		data = append(data, updateJson)
+
+		// Car 2
+		locationJson = GpsLocation{
+			Latitude:  previousJsonCar2.Vehicle.GpsLocation.Latitude + 0.000001,
+			Longitude: previousJsonCar2.Vehicle.GpsLocation.Longitude + 0.000001,
+		}
+		vehicleJson = Vehicle{
+			Vin:                     "car2",
+			FrontLidarDistance:      previousJsonCar2.Vehicle.FrontLidarDistance + distanceIncrement,
+			FrontUltrasonicDistance: previousJsonCar2.Vehicle.FrontUltrasonicDistance + distanceIncrement,
+			RearUltrasonicDistance:  100.11,
+			WheelSpeed:              previousJsonCar2.Vehicle.WheelSpeed,
+			GpsLocation:             locationJson,
+			GpsSpeed:                previousJsonCar2.Vehicle.GpsSpeed,
+			GpsDirection:            previousJsonCar2.Vehicle.GpsDirection - 10,
+			MagnetometerDirection:   previousJsonCar2.Vehicle.MagnetometerDirection - 10,
+		}
+		updateJson = UpdateJson{
+			Index:     previousJsonCar2.Index + 1,
+			Type:      "update_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vehicle:   vehicleJson,
+		}
+		previousJsonCar2 = updateJson
+		data = append(data, updateJson)
+	}
+
+>>>>>>> 94427092fd2ed6f58f517b92a8436250ebac04b2
 	return data, nil
 }

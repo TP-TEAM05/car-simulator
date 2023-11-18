@@ -1,5 +1,7 @@
-module traffic-dt-vehicle-simulator
+module car-simulator
 
-go 1.17
+go 1.21
 
-require github.com/joho/godotenv v1.4.0
+require (
+	github.com/joho/godotenv v1.4.0
+)

@@ -1,15 +1,16 @@
 package main
 
 import (
+	"car-simulator/VehicleDataGenerator"
 	"flag"
 	"fmt"
-	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"net"
 	"os"
 	"path/filepath"
 	"strconv"
-	"traffic-dt-vehicle-simulator/VehicleDataGenerator"
+
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func loadServerAddress() *net.UDPAddr {
@@ -51,7 +52,9 @@ func main() {
 	case ".xml":
 		StartProcessingXML(dumpFilepath, startTimeOffset, connectionsManager)
 	case ".log":
-		StartProcessingJSON(dumpFilepath, startTimeOffset, connectionsManager)
+		for true {
+			StartProcessingJSON(dumpFilepath, startTimeOffset, connectionsManager)
+		}
 	default:
 		panic(fmt.Sprintf("unknown dump file format with extension %s", filepath.Ext(dumpFilepath)))
 	}

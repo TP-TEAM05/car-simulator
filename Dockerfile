@@ -10,9 +10,9 @@ COPY .env ./
 
 RUN go mod download
 
-COPY Dumps ./Dumps
+COPY SimulatedData ./SimulatedData
+COPY VehicleDataGenerator ./VehicleDataGenerator
 COPY *.go ./
-
 
 RUN go build -o /main-build
 
