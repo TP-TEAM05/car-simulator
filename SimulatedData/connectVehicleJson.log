@@ -1,0 +1,2 @@
+{"time":"2023-11-17T15:23:33.975Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2023-11-17T15:23:33.975Z\",\"vin\":\"car1\"}"}
+{"time":"2023-11-17T15:23:34.025Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2023-11-17T15:23:34.025Z\",\"vin\":\"car2\"}"}

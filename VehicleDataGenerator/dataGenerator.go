@@ -16,22 +16,24 @@ func generateData() ([]interface{}, error) {
 		return data, err
 	}
 
-	// Generating connect data
-	connectJson := ConnectJson{
-		Index:     0,
-		Type:      "connect_vehicle",
-		Timestamp: getTimestamp(timeBetweenEvents),
-		Vin:       "car1",
-	}
-	data = append(data, connectJson)
+	/*
+		// Generating connect data
+		connectJson := ConnectJson{
+			Index:     0,
+			Type:      "connect_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vin:       "car1",
+		}
+		data = append(data, connectJson)
 
-	connectJson = ConnectJson{
-		Index:     0,
-		Type:      "connect_vehicle",
-		Timestamp: getTimestamp(timeBetweenEvents),
-		Vin:       "car2",
-	}
-	data = append(data, connectJson)
+		connectJson = ConnectJson{
+			Index:     0,
+			Type:      "connect_vehicle",
+			Timestamp: getTimestamp(timeBetweenEvents),
+			Vin:       "car2",
+		}
+		data = append(data, connectJson)
+	*/
 
 	// Generating update data
 	var previousJsonCar1 UpdateJson
@@ -65,6 +67,9 @@ func generateData() ([]interface{}, error) {
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar1 = updateJson
+
+			updateJson.Index = 0
+
 			data = append(data, updateJson)
 
 			// Car 2
@@ -90,6 +95,9 @@ func generateData() ([]interface{}, error) {
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar2 = updateJson
+
+			updateJson.Index = 0
+
 			data = append(data, updateJson)
 		} else {
 
@@ -119,6 +127,9 @@ func generateData() ([]interface{}, error) {
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar1 = updateJson
+
+			updateJson.Index = 0
+
 			data = append(data, updateJson)
 
 			// Car 2
@@ -144,6 +155,9 @@ func generateData() ([]interface{}, error) {
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar2 = updateJson
+
+			updateJson.Index = 0
+
 			data = append(data, updateJson)
 		}
 	}
@@ -180,6 +194,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 
 		// Car 2
@@ -205,6 +222,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 	}
 
@@ -235,6 +255,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 
 		// Car 2
@@ -260,6 +283,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 	}
 
@@ -292,6 +318,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 
 		// Car 2
@@ -317,6 +346,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 	}
 
@@ -347,6 +379,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 
 		// Car 2
@@ -372,6 +407,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 	}
 
@@ -402,6 +440,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 
 		// Car 2
@@ -427,6 +468,9 @@ func generateData() ([]interface{}, error) {
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
+
+		updateJson.Index = 0
+
 		data = append(data, updateJson)
 	}
 

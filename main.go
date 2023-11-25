@@ -33,7 +33,7 @@ func main() {
 	// Load the cmd arguments
 	flag.Parse()
 
-	dumpFilepath := os.Getenv("VEHICLE_DUMP_FILEPATH")
+	connectFilePath := os.Getenv("CONNECT_FILE_PATH")
 	startTimeOffset := GetFloatFromEnv("VEHICLE_DUMP_START_TIME_OFFSET", 0)
 
 	// Generating data
@@ -51,6 +51,7 @@ func main() {
 	case ".xml":
 		StartProcessingXML(dumpFilepath, startTimeOffset, connectionsManager)
 	case ".log":
+		StartProcessingJSON(connectFilePath, startTimeOffset, connectionsManager)
 		for true {
 			StartProcessingJSON(dumpFilepath, startTimeOffset, connectionsManager)
 		}

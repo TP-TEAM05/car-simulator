@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -17,6 +19,11 @@ type JsonLogLine struct {
 	Time           string `json:"time"`
 	Message        string `json:"message"`
 }
+
+// Index correction variables
+var vehicleOneIndex = 1
+var vehicleTwoIndex = 1
+var isFirst = true
 
 func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectionsManager *ConnectionsManager) {
 
@@ -73,6 +80,19 @@ func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectio
 		if err != nil {
 			fmt.Printf("Error unmarshalling json message to datagram: %v\n", err)
 			continue
+		}
+
+		// Index correction
+		if baseDatagram.Type == "update_vehicle" {
+			if isFirst {
+				jsonLine.Message = strings.Replace(jsonLine.Message, "0", strconv.Itoa(vehicleOneIndex), 1)
+				vehicleOneIndex += 1
+				isFirst = false
+			} else {
+				jsonLine.Message = strings.Replace(jsonLine.Message, "0", strconv.Itoa(vehicleTwoIndex), 1)
+				vehicleTwoIndex += 1
+				isFirst = true
+			}
 		}
 
 		datagramToSend := []byte(jsonLine.Message)
