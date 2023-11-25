@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-10-11 18:23:54 by Eclipse SUMO sumo Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="osm.net.xml"/>
+        <route-files value="osm.passenger.trips.xml,osm.bus.trips.xml"/>
+        <additional-files value="osm.poly.xml"/>
+    </input>
+
+    <output>
+        <fcd-output value="sumoTrace.xml"/>
+        <fcd-output.geo value="true"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+        <scale value="10"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="18"/>
+        <device.rerouting.adaptation-interval value="10"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <gui_only>
+        <gui-settings-file value="osm.view.xml"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<fcd-export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/fcd_file.xsd">
+    <timestep time="0.00">
+        <vehicle id="veh0" x="17.160083" y="48.362248" angle="98.36" type="veh_passenger" speed="0.00" pos="5.10" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="1.00">
+        <vehicle id="veh0" x="17.160106" y="48.362245" angle="98.36" type="veh_passenger" speed="1.71" pos="6.81" lane="-1043858896_0" slope="0.00"/>
+        <vehicle id="veh1" x="17.160106" y="48.362245" angle="98.36" type="veh_passenger" speed="1.71" pos="6.81" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="2.00">
+        <vehicle id="veh0" x="17.160158" y="48.362239" angle="98.36" type="veh_passenger" speed="3.91" pos="10.72" lane="-1043858896_0" slope="0.00"/>
+        <vehicle id="veh1" x="17.160158" y="48.362239" angle="98.36" type="veh_passenger" speed="3.91" pos="10.72" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="3.00">
+        <vehicle id="veh0" x="17.160229" y="48.362230" angle="98.36" type="veh_passenger" speed="5.36" pos="16.08" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160229" y="48.362230" angle="98.36" type="veh_passenger" speed="5.36" pos="16.08" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="4.00">
+        <vehicle id="veh0" x="17.160319" y="48.362220" angle="98.36" type="veh_passenger" speed="6.78" pos="22.86" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160319" y="48.362220" angle="98.36" type="veh_passenger" speed="6.78" pos="22.86" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="5.00">
+        <vehicle id="veh0" x="17.160442" y="48.362205" angle="99.31" type="veh_passenger" speed="9.30" pos="32.15" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160442" y="48.362205" angle="99.31" type="veh_passenger" speed="9.30" pos="32.15" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="6.00">
+        <vehicle id="veh0" x="17.160587" y="48.362186" angle="99.50" type="veh_passenger" speed="10.95" pos="43.11" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160587" y="48.362186" angle="99.50" type="veh_passenger" speed="10.95" pos="43.11" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="7.00">
+        <vehicle id="veh0" x="17.160753" y="48.362156" angle="103.67" type="veh_passenger" speed="12.70" pos="55.81" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160753" y="48.362156" angle="103.67" type="veh_passenger" speed="12.70" pos="55.81" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="8.00">
+        <vehicle id="veh0" x="17.160948" y="48.362116" angle="106.79" type="veh_passenger" speed="15.17" pos="70.98" lane="-1043858896_0" slope="0.00"/>        
+        <vehicle id="veh1" x="17.160948" y="48.362116" angle="106.79" type="veh_passenger" speed="15.17" pos="70.98" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="9.00">
+        <vehicle id="veh1" x="17.161172" y="48.362063" angle="109.40" type="veh_passenger" speed="17.58" pos="88.56" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+    <timestep time="10.00">
+        <vehicle id="veh1" x="17.161417" y="48.361997" angle="112.20" type="veh_passenger" speed="19.67" pos="108.23" lane="-1043858896_0" slope="0.00"/>
+    </timestep>
+</fcd-export>

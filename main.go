@@ -4,12 +4,13 @@ import (
 	"car-simulator/VehicleDataGenerator"
 	"flag"
 	"fmt"
-	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"net"
 	"os"
 	"path/filepath"
 	"strconv"
+
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func loadServerAddress() *net.UDPAddr {
