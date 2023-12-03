@@ -30,7 +30,6 @@ func loadServerAddress() *net.UDPAddr {
 }
 
 func main() {
-
 	// Load the cmd arguments
 	flag.Parse()
 

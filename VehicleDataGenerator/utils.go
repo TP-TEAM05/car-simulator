@@ -23,7 +23,7 @@ func getTimestamp(timeBetweenEvents time.Duration) string {
 	return tStr
 }
 
-func getDurationFromEnv(key string) (time.Duration, error) {
+func GetDurationFromEnv(key string) (time.Duration, error) {
 	var result time.Duration
 	result, err := time.ParseDuration(os.Getenv(key))
 	if err != nil {

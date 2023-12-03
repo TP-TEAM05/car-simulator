@@ -11,29 +11,27 @@ func generateData() ([]interface{}, error) {
 	rand.Seed(time.Now().UnixNano())
 
 	// Reading time between events duration
-	timeBetweenEvents, err := getDurationFromEnv("TIME_BETWEEN_EVENTS")
+	timeBetweenEvents, err := GetDurationFromEnv("TIME_BETWEEN_EVENTS")
 	if err != nil {
 		return data, err
 	}
 
-	/*
-		// Generating connect data
-		connectJson := ConnectJson{
-			Index:     0,
-			Type:      "connect_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
-			Vin:       "car1",
-		}
-		data = append(data, connectJson)
+	// Generating connect data
+	connectJson := ConnectJson{
+		Index:     0,
+		Type:      "connect_vehicle",
+		Timestamp: getTimestamp(timeBetweenEvents),
+		Vin:       "car1",
+	}
+	data = append(data, connectJson)
 
-		connectJson = ConnectJson{
-			Index:     0,
-			Type:      "connect_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
-			Vin:       "car2",
-		}
-		data = append(data, connectJson)
-	*/
+	connectJson = ConnectJson{
+		Index:     0,
+		Type:      "connect_vehicle",
+		Timestamp: getTimestamp(timeBetweenEvents),
+		Vin:       "car2",
+	}
+	data = append(data, connectJson)
 
 	// Generating update data
 	var previousJsonCar1 UpdateJson
@@ -63,7 +61,7 @@ func generateData() ([]interface{}, error) {
 			updateJson = UpdateJson{
 				Index:     1,
 				Type:      "update_vehicle",
-				Timestamp: getTimestamp(timeBetweenEvents),
+				Timestamp: "TimestampToReplace",
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar1 = updateJson
@@ -91,7 +89,7 @@ func generateData() ([]interface{}, error) {
 			updateJson = UpdateJson{
 				Index:     1,
 				Type:      "update_vehicle",
-				Timestamp: getTimestamp(timeBetweenEvents),
+				Timestamp: "TimestampToReplace",
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar2 = updateJson
@@ -123,7 +121,7 @@ func generateData() ([]interface{}, error) {
 			updateJson = UpdateJson{
 				Index:     previousJsonCar1.Index + 1,
 				Type:      "update_vehicle",
-				Timestamp: getTimestamp(timeBetweenEvents),
+				Timestamp: "TimestampToReplace",
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar1 = updateJson
@@ -151,7 +149,7 @@ func generateData() ([]interface{}, error) {
 			updateJson = UpdateJson{
 				Index:     previousJsonCar2.Index + 1,
 				Type:      "update_vehicle",
-				Timestamp: getTimestamp(timeBetweenEvents),
+				Timestamp: "TimestampToReplace",
 				Vehicle:   vehicleJson,
 			}
 			previousJsonCar2 = updateJson
@@ -190,7 +188,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar1.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
@@ -218,7 +216,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar2.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
@@ -251,7 +249,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar1.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
@@ -279,7 +277,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar2.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
@@ -314,7 +312,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar1.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
@@ -342,7 +340,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar2.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
@@ -375,7 +373,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar1.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
@@ -403,7 +401,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar2.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson
@@ -436,7 +434,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar1.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar1 = updateJson
@@ -464,7 +462,7 @@ func generateData() ([]interface{}, error) {
 		updateJson = UpdateJson{
 			Index:     previousJsonCar2.Index + 1,
 			Type:      "update_vehicle",
-			Timestamp: getTimestamp(timeBetweenEvents),
+			Timestamp: "TimestampToReplace",
 			Vehicle:   vehicleJson,
 		}
 		previousJsonCar2 = updateJson

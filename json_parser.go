@@ -41,6 +41,8 @@ func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectio
 
 	scanner := bufio.NewScanner(dumpJsonFile)
 
+	var correctedTimestamp string
+
 	// Read dump line by line
 	for scanner.Scan() {
 		lineBytes := scanner.Bytes()
@@ -50,6 +52,56 @@ func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectio
 			fmt.Printf("Error unmarshalling json dump file line: %v\n", err)
 			continue
 		}
+
+		/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 */
+		if dumpFilepath == os.Getenv("CONNECT_FILE_PATH") {
+			err = setTimestampEpoch(jsonLine.Time)
+			if err != nil {
+				fmt.Println("Error occurred while setting epoch:", err)
+				return
+			}
+		} else {
+			correctedTimestamp = getCorrectedTimestamp()
+			jsonLine.Time = correctedTimestamp
+		}
+		/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 */
 
 		// Get the time of the first line of the dump
 		if dumpStartTime == nil {
@@ -82,7 +134,27 @@ func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectio
 			continue
 		}
 
-		// Index correction
+		/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 */
+
+		// Index and timestamp correction
 		if baseDatagram.Type == "update_vehicle" {
 			if isFirst {
 				jsonLine.Message = strings.Replace(jsonLine.Message, "0", strconv.Itoa(vehicleOneIndex), 1)
@@ -93,7 +165,31 @@ func StartProcessingJSON(dumpFilepath string, startTimeOffset float32, connectio
 				vehicleTwoIndex += 1
 				isFirst = true
 			}
+
+			jsonLine.Message = strings.Replace(jsonLine.Message, "TimestampToReplace", correctedTimestamp, 1)
 		}
+
+		/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 */
 
 		datagramToSend := []byte(jsonLine.Message)
 		var vin string

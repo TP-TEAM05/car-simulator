@@ -14,6 +14,6 @@ type Connection struct {
 
 func (connection *Connection) WriteDatagram(data []byte) {
 	_, _ = connection.UDPConnection.Write(data)
-	fmt.Printf("Sending message to %v: %s\n", connection.OtherAddress, data[:64])
+	fmt.Printf("Sending message to %v: %s\n", connection.OtherAddress, data[:90])
 	connection.NextSendIndex++
 }
