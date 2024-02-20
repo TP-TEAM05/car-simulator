@@ -31,3 +31,12 @@ func GetDurationFromEnv(key string) (time.Duration, error) {
 	}
 	return result, nil
 }
+
+func GetBooleanFromEnv(key string) (bool, error) {
+	var result bool
+	result, err := strconv.ParseBool(os.Getenv(key))
+	if err != nil {
+		return result, err
+	}
+	return result, nil
+}

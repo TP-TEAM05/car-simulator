@@ -34,21 +34,48 @@ func GenerateVehicleData() (string, error) {
 	}(logfile)
 
 	// Generating data
-	data, err := generateData()
+	wantNewData, err := GetBooleanFromEnv("WANT_NEW_DATA")
 	if err != nil {
 		return "", err
 	}
 
-	// Writing data into connect output file
-	err = writeData(connectLogfile, data, true)
-	if err != nil {
-		return "", err
+	var data []interface{}
+	if wantNewData {
+		data, err = generateNewData()
+		if err != nil {
+			return "", err
+		}
+	} else {
+		data, err = generateData()
+		if err != nil {
+			return "", err
+		}
 	}
 
-	// Writing data into output file
-	err = writeData(logfile, data, false)
-	if err != nil {
-		return "", err
+	if wantNewData {
+		// Writing data into connect output file
+		err = writeData(connectLogfile, data, true, true)
+		if err != nil {
+			return "", err
+		}
+
+		// Writing data into output file
+		err = writeData(logfile, data, false, true)
+		if err != nil {
+			return "", err
+		}
+	} else {
+		// Writing data into connect output file
+		err = writeData(connectLogfile, data, true, false)
+		if err != nil {
+			return "", err
+		}
+
+		// Writing data into output file
+		err = writeData(logfile, data, false, false)
+		if err != nil {
+			return "", err
+		}
 	}
 
 	return outputPath, nil

@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func writeData(logfile *os.File, data []interface{}, toConnect bool) error {
+func writeData(logfile *os.File, data []interface{}, toConnect bool, newData bool) error {
 
 	if toConnect {
 		for i := 0; i < 2; i++ {
@@ -21,8 +21,15 @@ func writeData(logfile *os.File, data []interface{}, toConnect bool) error {
 			if _, ok := model.(ConnectJson); ok {
 				timestamp = model.(ConnectJson).Timestamp
 			}
-			if _, ok := model.(UpdateJson); ok {
-				timestamp = model.(UpdateJson).Timestamp
+
+			if newData {
+				if _, ok := model.(NewUpdateJson); ok {
+					timestamp = model.(NewUpdateJson).Timestamp
+				}
+			} else {
+				if _, ok := model.(UpdateJson); ok {
+					timestamp = model.(UpdateJson).Timestamp
+				}
 			}
 
 			jsonString := string(jsonBytes)
@@ -44,11 +51,14 @@ func writeData(logfile *os.File, data []interface{}, toConnect bool) error {
 
 				var timestamp string
 
-				if _, ok := model.(ConnectJson); ok {
-					timestamp = model.(ConnectJson).Timestamp
-				}
-				if _, ok := model.(UpdateJson); ok {
-					timestamp = model.(UpdateJson).Timestamp
+				if newData {
+					if _, ok := model.(NewUpdateJson); ok {
+						timestamp = model.(NewUpdateJson).Timestamp
+					}
+				} else {
+					if _, ok := model.(UpdateJson); ok {
+						timestamp = model.(UpdateJson).Timestamp
+					}
 				}
 
 				jsonString := string(jsonBytes)

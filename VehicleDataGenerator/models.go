@@ -30,3 +30,22 @@ type UpdateJson struct {
 	Timestamp string  `json:"timestamp"`
 	Vehicle   Vehicle `json:"vehicle"`
 }
+
+type NewVehicle struct {
+	Vin                string  `json:"VIN"`
+	Longitude          float64 `json:"LONGITUDE"`
+	Latitude           float64 `json:"LATITUDE"`
+	DistanceUltrasonic float64 `json:"DISTANCE_ULTRASONIC"`
+	DistanceLidar      float64 `json:"DISTANCE_LIDAR"`
+	SpeedFrontLeft     float64 `json:"SPEED_FRONT_LEFT"`
+	SpeedFrontRight    float64 `json:"SPEED_FRONT_RIGHT"`
+	SpeedRearLeft      float64 `json:"SPEED_REAR_LEFT"`
+	SpeedRearRight     float64 `json:"SPEED_REAR_RIGHT"`
+}
+
+type NewUpdateJson struct {
+	Index     int        `json:"index"`
+	Type      string     `json:"type"`
+	Timestamp string     `json:"timestamp"`
+	Vehicle   NewVehicle `json:"vehicle"`
+}
