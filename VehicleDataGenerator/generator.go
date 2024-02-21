@@ -34,13 +34,13 @@ func GenerateVehicleData() (string, error) {
 	}(logfile)
 
 	// Generating data
-	wantNewData, err := GetBooleanFromEnv("WANT_NEW_DATA")
+	wantNewData, err := GetFloatFromEnv("WANT_NEW_DATA")
 	if err != nil {
 		return "", err
 	}
 
 	var data []interface{}
-	if wantNewData {
+	if wantNewData == 1 {
 		data, err = generateNewData()
 		if err != nil {
 			return "", err
@@ -52,7 +52,7 @@ func GenerateVehicleData() (string, error) {
 		}
 	}
 
-	if wantNewData {
+	if wantNewData == 1 {
 		// Writing data into connect output file
 		err = writeData(connectLogfile, data, true, true)
 		if err != nil {

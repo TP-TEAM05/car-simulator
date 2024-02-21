@@ -2,6 +2,7 @@ package VehicleDataGenerator
 
 import (
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -32,9 +33,8 @@ func GetDurationFromEnv(key string) (time.Duration, error) {
 	return result, nil
 }
 
-func GetBooleanFromEnv(key string) (bool, error) {
-	var result bool
-	result, err := strconv.ParseBool(os.Getenv(key))
+func GetFloatFromEnv(key string) (float64, error) {
+	result, err := strconv.ParseFloat(os.Getenv(key), 64)
 	if err != nil {
 		return result, err
 	}
