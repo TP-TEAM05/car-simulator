@@ -620,12 +620,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car1
 		vehicleJson := NewVehicle{
 			Vin:                "car1",
-			Longitude:          previousJsonCar1.Vehicle.Longitude - 0.000001,
-			Latitude:           previousJsonCar1.Vehicle.Latitude + 0.000001,
+			Longitude:          previousJsonCar1.Vehicle.Longitude - 0.000005,
+			Latitude:           previousJsonCar1.Vehicle.Latitude + 0.000005,
 			DistanceUltrasonic: 100.12,
 			DistanceLidar:      100.1,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -644,12 +644,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car 2
 		vehicleJson = NewVehicle{
 			Vin:                "car2",
-			Longitude:          previousJsonCar2.Vehicle.Longitude - 0.000001,
-			Latitude:           previousJsonCar2.Vehicle.Latitude + 0.000001,
+			Longitude:          previousJsonCar2.Vehicle.Longitude - 0.000005,
+			Latitude:           previousJsonCar2.Vehicle.Latitude + 0.000005,
 			DistanceUltrasonic: previousJsonCar2.Vehicle.DistanceUltrasonic + distanceIncrement,
 			DistanceLidar:      previousJsonCar2.Vehicle.DistanceLidar + distanceIncrement,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -673,12 +673,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car1
 		vehicleJson := NewVehicle{
 			Vin:                "car1",
-			Longitude:          previousJsonCar1.Vehicle.Longitude - 0.000001,
-			Latitude:           previousJsonCar1.Vehicle.Latitude - 0.000001,
+			Longitude:          previousJsonCar1.Vehicle.Longitude - 0.000005,
+			Latitude:           previousJsonCar1.Vehicle.Latitude - 0.000005,
 			DistanceUltrasonic: 100.12,
 			DistanceLidar:      100.1,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -697,12 +697,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car 2
 		vehicleJson = NewVehicle{
 			Vin:                "car2",
-			Longitude:          previousJsonCar2.Vehicle.Longitude - 0.000001,
-			Latitude:           previousJsonCar2.Vehicle.Latitude - 0.000001,
+			Longitude:          previousJsonCar2.Vehicle.Longitude - 0.000005,
+			Latitude:           previousJsonCar2.Vehicle.Latitude - 0.000005,
 			DistanceUltrasonic: previousJsonCar2.Vehicle.DistanceUltrasonic + distanceIncrement,
 			DistanceLidar:      previousJsonCar2.Vehicle.DistanceLidar + distanceIncrement,
-			SpeedFrontLeft:     previousJsonCar2.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar2.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar2.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar2.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar2.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar2.Vehicle.SpeedRearRight,
 		}
@@ -781,12 +781,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car1
 		vehicleJson := NewVehicle{
 			Vin:                "car1",
-			Longitude:          previousJsonCar1.Vehicle.Longitude + 0.000001,
-			Latitude:           previousJsonCar1.Vehicle.Latitude - 0.000001,
+			Longitude:          previousJsonCar1.Vehicle.Longitude + 0.000005,
+			Latitude:           previousJsonCar1.Vehicle.Latitude - 0.000005,
 			DistanceUltrasonic: 100.12,
 			DistanceLidar:      100.1,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -805,12 +805,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car 2
 		vehicleJson = NewVehicle{
 			Vin:                "car2",
-			Longitude:          previousJsonCar2.Vehicle.Longitude + 0.000001,
-			Latitude:           previousJsonCar2.Vehicle.Latitude - 0.000001,
+			Longitude:          previousJsonCar2.Vehicle.Longitude + 0.000005,
+			Latitude:           previousJsonCar2.Vehicle.Latitude - 0.000005,
 			DistanceUltrasonic: previousJsonCar2.Vehicle.DistanceUltrasonic + distanceIncrement,
 			DistanceLidar:      previousJsonCar2.Vehicle.DistanceLidar + distanceIncrement,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -834,12 +834,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car1
 		vehicleJson := NewVehicle{
 			Vin:                "car1",
-			Longitude:          previousJsonCar1.Vehicle.Longitude + 0.000001,
-			Latitude:           previousJsonCar1.Vehicle.Latitude + 0.000001,
+			Longitude:          previousJsonCar1.Vehicle.Longitude + 0.000005,
+			Latitude:           previousJsonCar1.Vehicle.Latitude + 0.000005,
 			DistanceUltrasonic: 100.12,
 			DistanceLidar:      100.1,
-			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar1.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar1.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar1.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar1.Vehicle.SpeedRearRight,
 		}
@@ -858,12 +858,12 @@ func generateNewData() ([]interface{}, error) {
 		// Car 2
 		vehicleJson = NewVehicle{
 			Vin:                "car2",
-			Longitude:          previousJsonCar2.Vehicle.Longitude + 0.000001,
-			Latitude:           previousJsonCar2.Vehicle.Latitude + 0.000001,
+			Longitude:          previousJsonCar2.Vehicle.Longitude + 0.000005,
+			Latitude:           previousJsonCar2.Vehicle.Latitude + 0.000005,
 			DistanceUltrasonic: previousJsonCar2.Vehicle.DistanceUltrasonic + distanceIncrement,
 			DistanceLidar:      previousJsonCar2.Vehicle.DistanceLidar + distanceIncrement,
-			SpeedFrontLeft:     previousJsonCar2.Vehicle.SpeedFrontLeft - 0.000001,
-			SpeedFrontRight:    previousJsonCar2.Vehicle.SpeedFrontRight + 0.000001,
+			SpeedFrontLeft:     previousJsonCar2.Vehicle.SpeedFrontLeft - 0.000005,
+			SpeedFrontRight:    previousJsonCar2.Vehicle.SpeedFrontRight + 0.000005,
 			SpeedRearLeft:      previousJsonCar2.Vehicle.SpeedRearLeft,
 			SpeedRearRight:     previousJsonCar2.Vehicle.SpeedRearRight,
 		}
