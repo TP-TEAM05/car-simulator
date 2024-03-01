@@ -1,2 +1,2 @@
-{"time":"2024-02-28T06:55:21.815Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2024-02-28T06:55:21.815Z\",\"vin\":\"car1\"}"}
-{"time":"2024-02-28T06:55:21.865Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2024-02-28T06:55:21.865Z\",\"vin\":\"car2\"}"}
+{"time":"2024-03-01T21:49:54.053Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2024-03-01T21:49:54.053Z\",\"vin\":\"car1\"}"}
+{"time":"2024-03-01T21:49:54.103Z","message":"{\"index\":0,\"type\":\"connect_vehicle\",\"timestamp\":\"2024-03-01T21:49:54.103Z\",\"vin\":\"car2\"}"}

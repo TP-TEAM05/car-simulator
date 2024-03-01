@@ -35,7 +35,9 @@ type NewVehicle struct {
 	Vin                string  `json:"VIN"`
 	Longitude          float64 `json:"Longitude"`
 	Latitude           float64 `json:"Latitude"`
+	CarDirection       float64 `json:"CarDirection"`
 	DistanceUltrasonic float64 `json:"DistanceUltrasonic"`
+	RearUltrasonic     float64 `json:"RearUltrasonic"`
 	DistanceLidar      float64 `json:"DistanceLidar"`
 	SpeedFrontLeft     float64 `json:"SpeedFrontLeft"`
 	SpeedFrontRight    float64 `json:"SpeedFrontRight"`
