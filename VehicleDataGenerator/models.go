@@ -32,17 +32,17 @@ type UpdateJson struct {
 }
 
 type NewVehicle struct {
-	Vin                string  `json:"VIN"`
-	Longitude          float64 `json:"Longitude"`
-	Latitude           float64 `json:"Latitude"`
-	CarDirection       float64 `json:"CarDirection"`
-	DistanceUltrasonic float64 `json:"DistanceUltrasonic"`
-	RearUltrasonic     float64 `json:"RearUltrasonic"`
-	DistanceLidar      float64 `json:"DistanceLidar"`
-	SpeedFrontLeft     float64 `json:"SpeedFrontLeft"`
-	SpeedFrontRight    float64 `json:"SpeedFrontRight"`
-	SpeedRearLeft      float64 `json:"SpeedRearLeft"`
-	SpeedRearRight     float64 `json:"SpeedRearRight"`
+	Vin             string  `json:"VIN"`
+	Longitude       float64 `json:"Longitude"`
+	Latitude        float64 `json:"Latitude"`
+	GpsDirection    float64 `json:"GpsDirection"`
+	FrontUltrasonic float64 `json:"FrontUltrasonic"`
+	RearUltrasonic  float64 `json:"RearUltrasonic"`
+	FrontLidar      float64 `json:"FrontLidar"`
+	SpeedFrontLeft  float64 `json:"SpeedFrontLeft"`
+	SpeedFrontRight float64 `json:"SpeedFrontRight"`
+	SpeedRearLeft   float64 `json:"SpeedRearLeft"`
+	SpeedRearRight  float64 `json:"SpeedRearRight"`
 }
 
 type NewUpdateJson struct {
