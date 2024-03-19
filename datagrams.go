@@ -70,7 +70,7 @@ type UnsubscribeDatagram struct {
 
 type AcknowledgeDatagram struct {
 	BaseDatagram
-	AcknowledgingIndex int `json:"acknowledgingIndex"`
+	AcknowledgingIndex int `json:"acknowledging_index"`
 }
 
 type KeepAliveDatagram struct {
@@ -87,15 +87,15 @@ type RequestAreaDatagram struct {
 
 type AreaDatagram struct {
 	BaseDatagram
-	TopLeft     PositionJSON `json:"topLeft"`
-	BottomRight PositionJSON `json:"bottomRight"`
+	TopLeft     PositionJSON `json:"top_left"`
+	BottomRight PositionJSON `json:"bottom_right"`
 }
 
 type NotifyDatagram struct {
 	BaseDatagram
-	VehicleId   int    `json:"vehicleId"`
+	VehicleId   int    `json:"vehicle_id"`
 	Level       string `json:"level"`
-	ContentType string `json:"contentType"`
+	ContentType string `json:"content_type"`
 }
 
 func (notifyDatagram *NotifyDatagram) GetNotifyDatagram() *NotifyDatagram {
@@ -141,7 +141,7 @@ func (notifyDatagram *CrossroadNotifyDatagram) GetContent() interface{} {
 type NotifyVehicleDatagram struct {
 	BaseDatagram
 	Level       string `json:"level"`
-	ContentType string `json:"contentType"`
+	ContentType string `json:"content_type"`
 }
 
 type GenericNotifyVehicleDatagram struct {
@@ -175,7 +175,7 @@ type ConnectVehicleDatagram struct {
 
 type DisconnectVehicleDatagram struct {
 	BaseDatagram
-	ConnectTo string `json:"connectTo"`
+	ConnectTo string `json:"connect_to"`
 }
 
 type UpdateVehicleDatagram struct {
@@ -191,7 +191,7 @@ type UpdateVehiclesVehicle struct {
 	Acceleration float32      `json:"acceleration"`
 	Heading      float32      `json:"heading"`
 	Position     PositionJSON `json:"position"`
-	LaneId       string       `json:"laneId"`
+	LaneId       string       `json:"lane_id"`
 }
 
 type UpdateVehicleVehicle struct {
@@ -200,7 +200,7 @@ type UpdateVehicleVehicle struct {
 	Acceleration float32      `json:"acceleration"`
 	Heading      float32      `json:"heading"`
 	Position     PositionJSON `json:"position"`
-	LaneId       string       `json:"laneId"`
+	LaneId       string       `json:"lane_id"`
 }
 
 type UpdateNotificationsDatagram struct {
@@ -210,9 +210,9 @@ type UpdateNotificationsDatagram struct {
 
 type UpdateNotificationsNotification struct {
 	Timestamp   string      `json:"timestamp"`
-	VehicleId   int         `json:"vehicleId"`
+	VehicleId   int         `json:"vehicle_id"`
 	Level       string      `json:"level"`
-	ContentType string      `json:"contentType"`
+	ContentType string      `json:"content_type"`
 	Content     interface{} `json:"content"`
 }
 
@@ -226,14 +226,14 @@ type GenericNotificationContent struct {
 }
 
 type HeadCollisionNotificationContent struct {
-	TargetVehicleId      int     `json:"targetVehicleId"`
+	TargetVehicleId      int     `json:"target_vehicle_id"`
 	TimeToCollision      float32 `json:"time_to_collision"`
 	MaxSpeedExceededBy   float32 `json:"max_speed_exceeded_by"`
 	BreakingDistanceDiff float32 `json:"breaking_distance_diff"`
 }
 
 type ChainCollisionNotificationContent struct {
-	TargetVehicleId     int     `json:"targetVehicleId"`
+	TargetVehicleId     int     `json:"target_vehicle_id"`
 	CurrentDistance     float32 `json:"current_distance"`
 	RecommendedDistance float32 `json:"recommended_distance"`
 }
