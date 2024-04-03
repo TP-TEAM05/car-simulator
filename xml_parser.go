@@ -33,15 +33,8 @@ type VehicleXML struct {
 
 func vehicleXMLToVehicleJSON(vehicleXML *VehicleXML) UpdateVehicleVehicle {
 	return UpdateVehicleVehicle{
-		Vin:          vehicleXML.Id,
-		Speed:        vehicleXML.Speed,
-		Acceleration: 0,
-		Heading:      vehicleXML.Angle,
-		LaneId:       vehicleXML.LaneId,
-		Position: PositionJSON{
-			Lat: vehicleXML.Y,
-			Lon: vehicleXML.X,
-		},
+		Vin:   vehicleXML.Id,
+		Speed: vehicleXML.Speed,
 	}
 }
 

@@ -195,12 +195,18 @@ type UpdateVehiclesVehicle struct {
 }
 
 type UpdateVehicleVehicle struct {
-	Vin          string       `json:"vin"`
-	Speed        float32      `json:"speed"`
-	Acceleration float32      `json:"acceleration"`
-	Heading      float32      `json:"heading"`
-	Position     PositionJSON `json:"position"`
-	LaneId       string       `json:"lane_id"`
+	Vin             string  `json:"vin"`
+	Longitude       float32 `json:"longitude"`
+	Latitude        float32 `json:"latitude"`
+	GpsDirection    float32 `json:"gps_direction"`
+	FrontUltrasonic float32 `json:"front_ultrasonic"`
+	FrontLidar      float32 `json:"front_lidar"`
+	RearUltrasonic  float32 `json:"rear_ultrasonic"`
+	Speed           float32 `json:"speed"`
+	SpeedFrontLeft  float32 `json:"speed_front_left"`
+	SpeedFrontRight float32 `json:"speed_front_right"`
+	SpeedRearLeft   float32 `json:"speed_rear_left"`
+	SpeedRearRight  float32 `json:"speed_rear_right"`
 }
 
 type UpdateNotificationsDatagram struct {
