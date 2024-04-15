@@ -4,13 +4,13 @@ import (
 	"car-simulator/VehicleDataGenerator"
 	"flag"
 	"fmt"
+	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"net"
 	"os"
 	"path/filepath"
 	"strconv"
-
-	_ "github.com/joho/godotenv/autoload"
+	"time"
 )
 
 func loadServerAddress() *net.UDPAddr {
@@ -30,6 +30,9 @@ func loadServerAddress() *net.UDPAddr {
 }
 
 func main() {
+
+	time.Sleep(5 * time.Second)
+
 	// Load the cmd arguments
 	flag.Parse()
 
